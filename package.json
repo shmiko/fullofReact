@@ -5,18 +5,19 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node server.js --ignore public/",
-    "dev": "webpack -wd"
+    "dev": "webpack -wd",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jscomplete/learn-fullstack-javascript.git"
+    "url": "git+https://github.com/shmiko/fullofreact.git"
   },
   "author": "",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/jscomplete/learn-fullstack-javascript/issues"
+    "url": "https://github.com/shmiko/fullofreact/issues"
   },
-  "homepage": "https://github.com/jscomplete/learn-fullstack-javascript#readme",
+  "homepage": "https://github.com/shmiko/fullofreact",
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
