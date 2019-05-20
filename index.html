@@ -15,10 +15,15 @@
 		<div id='root'></div>
 		<script type="text/babel">
 			let city = "Madrid";
-			const Hello = () => {
+			// const Hello = (props) => {
+				const Hello = ({library, message}) => {
+				// console.log(props);
 				return (
 					<div className="heading">
-						<h1>Welcome to {city}</h1>
+						
+						<h1>Welcome to {library}</h1> {/* <h1>Welcome to {props.library}</h1> 
+																						<p>{props.message}</p> */}
+						<p>{message}</p>
 					</div>
 				)
 			};
@@ -35,7 +40,7 @@
 				// the below code cannot be interpreted by React - 
 				//you need babel which will translate it to JSX, also change script type to babel instead of js
 				//<h1 className="heading">Hello {city}</h1>, 
-				<Hello />,
+				<Hello library="React" message="Enjoy"/>,
 				document.getElementById("root")
 			)
 		</script>
