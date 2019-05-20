@@ -4,20 +4,38 @@
 		<title>React FullJS</title>
 		<script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
 		<script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+		<style type="text/css">
+			.heading {
+				color: blue;
+			}
+		</style>
 	</head>
 	<body>
 		<div id='root'></div>
-		<script type="text/javascript">
+		<script type="text/babel">
+			let city = "Madrid";
+			const Hello = () => {
+				return (
+					<div className="heading">
+						<h1>Welcome to {city}</h1>
+					</div>
+				)
+			}
 			ReactDOM.render(
-				React.createElement(
-					"div", 
-					null, 
-					React.createElement(
-						"h1",
-						null,
-						"Oh Hello"
-					)
-				),
+				// React.createElement(
+				// 	"div", 
+				// 	null, 
+				// 	React.createElement(
+				// 		"h1",
+				// 		null,
+				// 		"Oh Hello"
+				// 	)
+				// ),
+				// the below code cannot be interpreted by React - 
+				//you need babel which will translate it to JSX, also change script type to babel instead of js
+				//<h1 className="heading">Hello {city}</h1>, 
+				<Hello />,
 				document.getElementById("root")
 			)
 		</script>
