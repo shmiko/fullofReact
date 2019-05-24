@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>React FullJS</title>
+		<script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+		<script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+		<style type="text/css">
+			.heading {
+				color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='root'></div>
+		<script type="text/babel">
+			// let city = "Madrid";
+			// const Hello = (props) => {
+				// const Hello = ({library, message}) => {
+				// console.log(props);
+				// return (
+					// <div className="heading">
+						
+						// <h1>Welcome to {library}</h1> {/* <h1>Welcome to {props.library}</h1> 
+																						// <p>{props.message}</p> */}
+						// <p>{message}</p>
+					// </div>
+				// )
+			// };
+
+			const Lake = {{name}} => <h1>{name}</h1>;
+
+			const App = () => {
+				<div>
+					<Lake name="Lake Tahoe"/>
+					<Lake name="Angora Lake"/>
+					<Lake name="Shirley Lake"/>
+				</div>
+			};
+			ReactDOM.render(
+				// React.createElement(
+				// 	"div", 
+				// 	null, 
+				// 	React.createElement(
+				// 		"h1",
+				// 		null,
+				// 		"Oh Hello"
+				// 	)
+				// ),
+				// the below code cannot be interpreted by React - 
+				//you need babel which will translate it to JSX, also change script type to babel instead of js
+				//<h1 className="heading">Hello {city}</h1>, 
+				// <Hello library="React" message="Enjoy"/>,
+				<App />,
+				document.getElementById("root")
+			)
+		</script>
+	</body>
+</html>

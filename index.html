@@ -14,19 +14,81 @@
 	<body>
 		<div id='root'></div>
 		<script type="text/babel">
-			let city = "Madrid";
+			// let city = "Madrid";
 			// const Hello = (props) => {
-				const Hello = ({library, message}) => {
+				// const Hello = ({library, message}) => {
 				// console.log(props);
-				return (
-					<div className="heading">
+				// return (
+					// <div className="heading">
 						
-						<h1>Welcome to {library}</h1> {/* <h1>Welcome to {props.library}</h1> 
-																						<p>{props.message}</p> */}
-						<p>{message}</p>
-					</div>
+						// <h1>Welcome to {library}</h1> {/* <h1>Welcome to {props.library}</h1> 
+																						// <p>{props.message}</p> */}
+						// <p>{message}</p>
+					// </div>
+				// )
+			// };
+
+			const Lake = ({name}) => <h1>{name}</h1>;
+			const SkiResort = ({name}) => <h1>{name}</h1>;
+			const lakeList1 = [ //this needs to use the map function to give each child object in render an id
+				"Ewe Lake",
+				"Powel Lake", 
+				"Lewis Lake"
+			]
+			const lakeList = [
+				{id:1, name: "Ewe Lake", trailhead:"Wanderer"},
+				{id:2, name: "Powel Lake", trailhead:"Escape"},
+				{id:3, name: "Lewis Lake", trailhead:"Discover"}
+			]
+			const App = ({lakes}) => {
+				return (
+					<ul>
+						{lakes.map((lake, i) => //if you wanted to use the object id you can
+							<li key={i}>{lake.name} - {lake.trailhead}</li>)}
+					</ul>
 				)
-			};
+			}
+			// const App = ({summer}) => {
+			// 	return (
+			// 		<div>{summer 
+			// 			? <Lake name="Lake Jones"/> 
+			// 			: <SkiResort name="Alpine Awe"/>}
+			// 		</div>
+			// 	)
+			// }
+			// class App extends React.Component{
+
+				// state = {
+				// 	loggedIn: false
+				// }
+				// logIn = () => this.setState({loggedIn: true})
+				// logOut = () => this.setState({loggedIn: false})
+				// render() {
+				// 	return(
+				// 		<div>
+				// 			<button onClick={this.logIn}>Log In</button>
+				// 			<button onClick={this.logOut}>Log Out</button>
+				// 			<div>The user is {this.state.loggedIn ? "logged in" : "not logged in"}.</div>
+				// 			<Lake name="Lake Tahoe"/>
+				// 			<Lake name="Angora Lake"/>
+				// 			<Lake name="Shirley Lake"/>
+				// 			<Lake name="My First Lake"/>
+				// 		</div>
+				// 	)
+				// }
+			// }
+
+			// const App = () => {
+				// return(
+				// 		<div>
+				// 			<Lake name="Lake Tahoe"/>
+				// 			<Lake name="Angora Lake"/>
+				// 			<Lake name="Shirley Lake"/>
+				// 			<Lake name="My First Lake"/>
+				// 		</div>
+				// 	)
+			// };
+
 			ReactDOM.render(
 				// React.createElement(
 				// 	"div", 
@@ -40,7 +102,8 @@
 				// the below code cannot be interpreted by React - 
 				//you need babel which will translate it to JSX, also change script type to babel instead of js
 				//<h1 className="heading">Hello {city}</h1>, 
-				<Hello library="React" message="Enjoy"/>,
+				// <Hello library="React" message="Enjoy"/>,
+				<App lakes={lakeList}/>,
 				document.getElementById("root")
 			)
 		</script>
